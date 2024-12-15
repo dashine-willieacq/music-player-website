@@ -1,0 +1,93 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Dashine Music Player</title>  
+    <link rel="stylesheet" href="styles.css">  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  
+</head>  
+<body>  
+    <div class="container">  
+        <aside class="sidebar">  
+            <div class="logo">  
+                <i class='bx bx-pulse'></i>  
+                <p>DASHINE</p>  
+            </div>  
+            <div class="menu">  
+                <h5>Music Categories</h5>  
+                <ul>  
+                    <li>  
+                        <i class='bx bxs-bolt-circle'></i>  
+                        <a href="#" onclick="displayCategory('Afrobeats')">Afrobeats</a>  
+                    </li>  
+                    <li>  
+                        <i class='bx bxs-volume-full'></i>  
+                        <a href="#" onclick="displayCategory('Amapiano')">Amapiano</a>  
+                    </li>  
+                    <li>  
+                        <i class='bx bxs-album'></i>  
+                        <a href="#" onclick="displayCategory('Pop')">Pop</a>  
+                    </li>  
+                    <li>  
+                        <i class='bx bxs-microphone'></i>  
+                        <a href="#" onclick="displayCategory('RnB')">RnB</a>  
+                    </li>  
+                    <li>  
+                        <i class='bx bxs-radio'></i>  
+                        <a href="#" onclick="displayCategory('Hip Hop')">Hip Hop</a>  
+                    </li>  
+                </ul>  
+            </div>  
+             <div class="menu">  
+                <h5>Playlist</h5>  
+                <ul>  
+                    <li>  
+                        <i class='bx bxs-plus-square'></i>  
+                        <a href="#" onclick="createPlaylist()">New Playlist</a>  
+                    </li>  
+                    <li>  
+                        <i class='bx bxs-heart'></i>  
+                        <a href="#" onclick="showFavorites()">Favourite</a>  
+                    </li>  
+                </ul>  
+            </div>  
+        </aside>  
+        <main>  
+            <header>  
+                <div class="nav-links">  
+                    <h1>Welcome to Dashine Music Player</h1>  
+                    <br />  
+                    <p>Select a music category to explore songs.</p>  
+                </div>  
+            </header>  
+            <div class="media-play">  
+                <img src="Music pics/image1.jpeg" alt="Music cover" />  
+            </div>  
+
+            <div class="audioPlayer">  
+                <audio id="audioPlayer" controls>  
+                    <source id="audioSource" src="">    
+                </audio>  
+            </div>  
+            <div class="player-actions">   
+                <div class="buttons">  
+                    <button onclick="playAudio()">Play</button>  
+                    <button onclick="pauseAudio()">Pause</button>
+                    <button onclick="skipTrack(-1)">Previous</button>  
+                    <button onclick="skipTrack(1)">Next</button>  
+                </div>  
+                <div>  
+                    <label for="volumeControl">Volume:</label>  
+                    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="setVolume(this.value)">  
+                </div>  
+            </div>  
+        </main>  
+        <div class="right-section">  
+            <h5>Current Playlist</h5>  
+            <ul id="playlist"></ul>  
+        </div>  
+    </div>  
+    <script src="main.js"></script>  
+</body>  
+</html>  
